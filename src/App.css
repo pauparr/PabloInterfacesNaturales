@@ -1,0 +1,199 @@
+:root {
+  color: #e9eefc;
+  background:
+    radial-gradient(circle at top, rgba(92, 131, 255, 0.35), transparent 36%),
+    radial-gradient(circle at right, rgba(48, 196, 141, 0.18), transparent 28%),
+    linear-gradient(160deg, #08111f 0%, #10182d 48%, #0b1324 100%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: transparent;
+  color: #e9eefc;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.85rem 1.2rem;
+  font: inherit;
+  font-weight: 700;
+  color: #f4f7ff;
+  background: linear-gradient(135deg, #5c83ff 0%, #8b6cff 100%);
+  box-shadow: 0 14px 30px rgba(92, 131, 255, 0.24);
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(1.04);
+}
+
+button:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.85);
+  outline-offset: 2px;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.voice-app {
+  width: min(1200px, calc(100% - 32px));
+  margin: 24px auto 40px;
+  padding: 24px;
+  border-radius: 28px;
+  background: rgba(8, 17, 31, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(20px);
+}
+
+.voice-app--error {
+  text-align: center;
+}
+
+.voice-hero {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.voice-kicker {
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: #8fd4c3;
+  font-size: 0.78rem;
+}
+
+.voice-hero h1 {
+  margin: 0 0 12px;
+  font-size: clamp(2rem, 4vw, 3.6rem);
+  line-height: 1.05;
+}
+
+.voice-intro {
+  max-width: 62ch;
+  margin: 0;
+  color: #c7d1ef;
+  font-size: 1.02rem;
+}
+
+.voice-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.voice-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.8fr);
+  gap: 20px;
+}
+
+.voice-board,
+.voice-panel {
+  background: rgba(13, 22, 40, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+}
+
+.voice-board {
+  padding: 16px;
+}
+
+.voice-grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: calc(100% / 7) calc(100% / 7);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.voice-cell {
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.voice-cell.is-active {
+  background: rgba(92, 131, 255, 0.08);
+}
+
+.voice-marker {
+  border-radius: 24px;
+  box-shadow:
+    0 0 0 10px rgba(255, 255, 255, 0.06),
+    0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.voice-panel {
+  display: grid;
+  gap: 16px;
+  padding: 16px;
+}
+
+.voice-card {
+  padding: 16px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.voice-card h2 {
+  margin: 0 0 10px;
+  font-size: 1.05rem;
+}
+
+.voice-card p,
+.voice-card li {
+  color: #d5def6;
+}
+
+.voice-card ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+@media (max-width: 900px) {
+  .voice-hero,
+  .voice-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .voice-actions {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .voice-app {
+    width: calc(100% - 20px);
+    margin: 10px auto 24px;
+    padding: 16px;
+    border-radius: 22px;
+  }
+
+  .voice-grid {
+    aspect-ratio: 0.95 / 1;
+  }
+}
